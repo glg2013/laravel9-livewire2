@@ -16,9 +16,10 @@ class NoteFactory extends Factory
      */
     public function definition()
     {
+        $faker = \Faker\Factory::create('zh_CN');
         return [
             'user_id' => 1,
-            'content' => $this->faker->paragraph(),
+            'content' => $faker->paragraph(),
         ];
     }
 }
