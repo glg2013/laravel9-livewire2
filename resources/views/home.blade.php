@@ -15,6 +15,8 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+                    <livewire:note-list />
                 </div>
             </div>
         </div>
