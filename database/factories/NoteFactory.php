@@ -17,7 +17,9 @@ class NoteFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'content' => $this->faker->paragraph(),
+            'user_id' => 1,
+            'ip_address' => $this->faker->ipv4()
         ];
     }
 }
