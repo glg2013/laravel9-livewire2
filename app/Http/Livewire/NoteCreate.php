@@ -19,7 +19,7 @@ class NoteCreate extends Component
 
         // 创建留言
         auth()->user()->notes()->create([
-            'content' => $this->content,
+            'content' => htmlspecialchars($this->content),
             'ip_address' => request()->ip(),
         ]);
         // 清空输入框
