@@ -15,6 +15,9 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+                    {{-- 加载留言板主组件 --}}
+                    <livewire:note-index />
                 </div>
             </div>
         </div>
