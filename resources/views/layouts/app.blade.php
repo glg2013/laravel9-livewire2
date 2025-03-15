@@ -80,7 +80,7 @@
         <main class="py-4">
             @yield('content')
         </main>
-        {{ $slot }}
+{{--        {{ $slot }}--}}
     </div>
 
     <livewire:scripts />

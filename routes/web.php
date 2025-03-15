@@ -21,4 +21,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/note-board', \App\Http\Livewire\NoteIndex::class)->name('note-board');
+Route::get('/note-board', \App\Http\Livewire\NoteIndex::class)->name('note-board')->middleware('auth');
