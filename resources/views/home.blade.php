@@ -17,7 +17,7 @@
                     {{ __('You are logged in!') }}
 
                     {{-- 引入 留言板的组件 --}}
-                    <livewire:note-index />
+{{--                    <livewire:note-index />--}}
                 </div>
             </div>
         </div>
