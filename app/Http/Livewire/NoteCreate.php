@@ -16,7 +16,7 @@ class NoteCreate extends Component
 
         // 保存数据到数据库
         auth()->user()->notes()->create([
-            'content' => $this->content,
+            'content' => htmlspecialchars($this->content),
             'ip_address' => request()->ip(),
         ]);
 
