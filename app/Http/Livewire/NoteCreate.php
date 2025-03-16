@@ -13,8 +13,14 @@ class NoteCreate extends Component
             'content' => 'required|string|max:255|min:3',
         ]);
 
+        if (!auth()->check()) {
+            // 没有登录不能留言
+            session()->flash('error', 'Please login first');
+            return redirect()->route('login');
+        }
+
         auth()->user()->notes()->create([
-            'content' => $this->content,
+            'content' => htmlspecialchars($this->content),
             'ip_address' => request()->ip(),
         ]);
 
