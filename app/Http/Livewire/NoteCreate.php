@@ -15,7 +15,7 @@ class NoteCreate extends Component
         ]);
 
         auth()->user()->notes()->create([
-            'content' => $this->content,
+            'content' => htmlspecialchars($this->content),
             'ip_address' => request()->ip(),
         ]);
 
