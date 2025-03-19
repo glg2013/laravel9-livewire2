@@ -17,7 +17,7 @@ class NoteCreate extends Component
         $this->validate();
 
         auth()->user()->notes()->create([
-            'content' => $this->content,
+            'content' => htmlspecialchars($this->content),
             'ip_address' => request()->ip(),
         ]);
 
