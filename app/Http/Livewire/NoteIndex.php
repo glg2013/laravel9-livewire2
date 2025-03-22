@@ -22,7 +22,7 @@ class NoteIndex extends Component
 
     public function render()
     {
-        $notes = Note::query()->latest()->paginate(3);
+        $notes = Note::with('user')->latest()->paginate(2);
         return view('livewire.note-index', compact('notes'));
     }
 }
