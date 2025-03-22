@@ -11,6 +11,15 @@ class NoteIndex extends Component
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
 
+    protected $listeners = [
+        'noteCreated'
+    ];
+
+    public function noteCreated()
+    {
+        session()->flash('success', 'Note Created Successfully');
+    }
+
     public function render()
     {
         $notes = Note::query()->latest()->paginate(3);
